@@ -1,0 +1,6 @@
+<div
+  *ngIf="control?.errors?.[errorAttribute] != null && (control?.dirty || control?.touched)"
+  class="invalid-feedback d-block"
+>
+  {{messageError}}
+</div>

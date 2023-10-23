@@ -1,0 +1,28 @@
+@import "primeng/resources/themes/lara-dark-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import 'primeflex/primeflex.css';
+
+body {
+  background-color: rgba(18, 31, 63, 0.7)!important;
+  color: var(--text-color)!important;
+}
+
+a {
+  text-decoration: none!important;
+}
+
+ol, ul {
+  padding-left: 0!important;
+}
+
+.accept-button-style-class {
+  margin-left: 20px;
+}
+
+.container-label-list {
+  display: flex;
+  flex-direction: column;
+  label {
+    font-weight: 600;
+  }
+}

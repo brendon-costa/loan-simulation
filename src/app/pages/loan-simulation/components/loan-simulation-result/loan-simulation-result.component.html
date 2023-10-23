@@ -1,0 +1,24 @@
+<div class="p-fluid row">
+  <div class="col-lg-4 mb-5 mt-4">
+    <div class="container-label-list">
+      <label>Valor das parcelas</label>
+      <span>{{resumeLoan.valuePlots | currency}}</span>
+    </div>
+  </div>
+  <div class="col-lg-4 mb-5 mt-4">
+    <div class="container-label-list">
+      <label>Número de parcelas</label>
+      <span>{{resumeLoan.numberPlots}}</span>
+    </div>
+  </div>
+  <div class="col-lg-4 mb-5 mt-4">
+    <div class="container-label-list">
+      <label>Total do valor com juros</label>
+      <span>{{resumeLoan.totalAmountWithInterest | currency}}</span>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-between mt-3">
+  <p-button severity="secondary" size="small" label="Cancelar" id="cancel" (click)="cancelHandle()"></p-button>
+  <p-button label="Confirmar" size="small" (click)="confirmation()" id="confirm"></p-button>
+</div>

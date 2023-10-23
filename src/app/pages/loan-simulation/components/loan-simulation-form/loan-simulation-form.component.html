@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="simulateHandle(form)">
+  <div class="p-fluid row">
+    <div class="col-lg-6 mb-3">
+      <label for="name">Nome do solicitante</label>
+      <input class="p-inputtext-sm" formControlName="name" id="name" type="text" pInputText />
+      <app-error-message
+        [control]="form.get('name')"
+      ></app-error-message>
+    </div>
+    <div class="col-lg-6 mb-3">
+      <label for="loanAmount">Valor desejado</label>
+      <p-inputNumber
+        formControlName="loanAmount"
+        class="p-inputtext-sm"
+        id="loanAmount"
+        mode="currency"
+        currency="BRL"
+        locale="pt-BR"
+      ></p-inputNumber>
+      <app-error-message
+        [control]="form.get('loanAmount')"
+      ></app-error-message>
+      <app-error-message
+        [control]="form.get('loanAmount')"
+        messageError="O valor desejado deve ser maior que 0"
+        errorAttribute="min"
+      ></app-error-message>
+    </div>
+    <div class="col-lg-6 mb-4">
+      <label for="numberPlots">Número de parcelas</label>
+      <p-autoComplete
+        id="numberPlots"
+        class="p-inputtext-sm"
+        formControlName="numberPlots"
+        [dropdown]="true"
+        [suggestions]="suggestions"
+        (completeMethod)="filterPlots($event)"
+        type="number"
+      ></p-autoComplete>
+      <app-error-message
+        [control]="form.get('numberPlots')"
+      ></app-error-message>
+      <app-error-message
+        [control]="form.get('numberPlots')"
+        messageError="O número de parcelas não pode ser maior que 360"
+        errorAttribute="max"
+      ></app-error-message>
+      <app-error-message
+        [control]="form.get('numberPlots')"
+        messageError="O número de parcelas deve ser maior que 0"
+        errorAttribute="min"
+      ></app-error-message>
+    </div>
+  </div>
+  <div class="d-flex justify-content-end">
+    <p-button id="simulate" type="submit" label="Simular" size="small"></p-button>
+  </div>
+</form>

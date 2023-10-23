@@ -1,0 +1,17 @@
+
+.container-congratulations {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  img {
+    width: 50%;
+    max-width: 300px;
+  }
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+}

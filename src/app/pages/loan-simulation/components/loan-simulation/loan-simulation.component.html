@@ -1,0 +1,23 @@
+<div class="container mt-5 mb-5">
+  <p-card header="Simulação do Empréstimo">
+    <p-steps
+      [model]="items"
+      [activeIndex]="activeIndexStep"
+      [readonly]="true"
+      class="w-100"
+    ></p-steps>
+    <div *ngIf="activeIndexStep == 0">
+      <app-loan-simulation-form
+        (simulate)="simulate($event)"
+      ></app-loan-simulation-form>
+    </div>
+    <div *ngIf="activeIndexStep == 1">
+      <app-loan-simulation-result
+        [resumeLoan]="resumeLoan"
+        (cancel)="previousStep()"
+      ></app-loan-simulation-result>
+    </div>
+  </p-card>
+</div>
+<p-toast></p-toast>
+<p-confirmDialog></p-confirmDialog>
